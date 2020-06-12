@@ -52,4 +52,4 @@ class AorDelete(Command):
     def take_action(self, parsed_args):
         aor = parsed_args.identifier
         self.app.LOG.debug('Deleting aor %s', aor)
-        return self.app.client.action('DBDel', {'Family': 'registrar/contact', 'Key': aor})
+        self.app.client.action('DBDel', {'Family': 'registrar/contact', 'Key': aor})
