@@ -1,0 +1,14 @@
+extra_config_files: '/etc/wazo-asterisk-cli/conf.d'
+
+# Connection info to the authentication server
+auth:
+  host: localhost
+  port: 9497
+  prefix: null
+  https: false
+
+amid:
+  host: localhost
+  port: 9491
+  prefix: null
+  https: false

@@ -1,0 +1,5 @@
+wazo-asterisk-cli (1.0.0) wazo-dev; urgency=medium
+
+  * Initial release.
+
+ -- Wazo Maintainers <dev+pkg@wazo.community>  Thu, 11 Jun 2020 21:35:00 -0500
