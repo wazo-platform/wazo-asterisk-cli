@@ -34,9 +34,9 @@ class WazoAsteriskCLI(App):
 
     def build_option_parser(self, *args, **kwargs):
         parser = super(WazoAsteriskCLI, self).build_option_parser(*args, **kwargs)
-        config_path_from_env = os.getenv('WAZO_AUTH_CLI_CONFIG', None)
+        config_path_from_env = os.getenv('WAZO_ASTERISK_CLI_CONFIG', None)
         config_path_default = os.path.expanduser(
-            os.path.join('~', '.config', 'wazo-auth-cli')
+            os.path.join('~', '.config', 'wazo-asterisk-cli')
         )
         parser.add_argument(
             '--config',
