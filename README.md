@@ -60,7 +60,7 @@ wazo-asterisk-cli complete > /etc/bash_completion.d/wazo-asterisk-cli
 List Aor for specific endpoint
 
 ```sh
-wazo-asterisk-cli aor list 1234
+wazo-asterisk-cli aor list 39x6d34a
 ```
 
 Delete Aor
