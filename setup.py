@@ -18,6 +18,7 @@ setup(
         'wazo_asterisk_cli.commands': [
             'aor_list = wazo_asterisk_cli.commands.aor:AorList',
             'aor_delete = wazo_asterisk_cli.commands.aor:AorDelete',
+            'channels_show = wazo_asterisk_cli.commands.channels:ChannelsShow',
             'endpoints_list = wazo_asterisk_cli.commands.endpoints:EndpointsList',
             'endpoint_show = wazo_asterisk_cli.commands.endpoints:EndpointShow',
         ],
