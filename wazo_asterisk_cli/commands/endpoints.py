@@ -1,7 +1,6 @@
 # Copyright 2020 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import json
 import pprint
 
 from cliff.command import Command
@@ -24,14 +23,16 @@ class EndpointsList(ListBuildingMixin, Lister):
         results = []
         for endpoint in endpoints:
             if endpoint.get('Event') == 'EndpointList':
-                results.append({
-                    'endpoint': endpoint['ObjectName'],
-                    'transport': endpoint['Transport'],
-                    'aor': endpoint['Aor'],
-                    'contacts': endpoint['Contacts'],
-                    'state': endpoint['DeviceState'],
-                })
-                
+                results.append(
+                    {
+                        'endpoint': endpoint['ObjectName'],
+                        'transport': endpoint['Transport'],
+                        'aor': endpoint['Aor'],
+                        'contacts': endpoint['Contacts'],
+                        'state': endpoint['DeviceState'],
+                    }
+                )
+
         headers = self.extract_column_headers(results[0])
         items = self.extract_items(headers, results)
         return headers, items
