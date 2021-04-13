@@ -1,8 +1,6 @@
 # Copyright 2020 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import json
-
 from cliff.command import Command
 from cliff.lister import Lister
 
@@ -20,7 +18,9 @@ class AorList(ListBuildingMixin, Lister):
         return parser
 
     def take_action(self, parsed_args):
-        endpoint = self.app.client.action('PJSIPShowEndpoint', {'Endpoint': parsed_args.endpoint})
+        endpoint = self.app.client.action(
+            'PJSIPShowEndpoint', {'Endpoint': parsed_args.endpoint}
+        )
 
         aors = []
         for e in endpoint:
@@ -29,9 +29,17 @@ class AorList(ListBuildingMixin, Lister):
 
         result = []
         for aor in aors:
-            r = self.app.client.action('DBGet', {'Family': 'registrar/contact', 'Key': aor})
+            r = self.app.client.action(
+                'DBGet', {'Family': 'registrar/contact', 'Key': aor}
+            )
             is_mobile = 'mobile' in r[1]['Val']
-            result.append({'endpoint': parsed_args.endpoint, 'aor': r[1]['Key'], 'mobile': is_mobile})
+            result.append(
+                {
+                    'endpoint': parsed_args.endpoint,
+                    'aor': r[1]['Key'],
+                    'mobile': is_mobile,
+                }
+            )
 
         if len(result) < 1:
             return (), ()
