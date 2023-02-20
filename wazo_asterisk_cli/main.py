@@ -1,4 +1,4 @@
-# Copyright 2017-2020 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2017-2023 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import os
@@ -17,7 +17,6 @@ logging.getLogger('requests').setLevel(logging.ERROR)
 
 
 class WazoAsteriskCLI(App):
-
     DEFAULT_VERBOSE_LEVEL = 0
 
     def __init__(self):
