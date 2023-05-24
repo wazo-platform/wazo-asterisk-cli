@@ -32,7 +32,7 @@ class WazoAsteriskCLI(App):
         self._backend = None
 
     def build_option_parser(self, *args, **kwargs):
-        parser = super(WazoAsteriskCLI, self).build_option_parser(*args, **kwargs)
+        parser = super().build_option_parser(*args, **kwargs)
         config_path_from_env = os.getenv('WAZO_ASTERISK_CLI_CONFIG', None)
         config_path_default = os.path.expanduser(
             os.path.join('~', '.config', 'wazo-asterisk-cli')
