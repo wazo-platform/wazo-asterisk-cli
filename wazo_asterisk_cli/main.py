@@ -1,17 +1,17 @@
 # Copyright 2017-2023 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import logging
 import os
 import os.path
 import sys
 
 from cliff.app import App
 from cliff.commandmanager import CommandManager
-from wazo_auth_client import Client as Auth
 from wazo_amid_client import Client as Amid
-from . import config
+from wazo_auth_client import Client as Auth
 
-import logging
+from . import config
 
 logging.getLogger('requests').setLevel(logging.ERROR)
 
