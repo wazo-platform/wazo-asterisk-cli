@@ -1,6 +1,5 @@
-FROM python:3.9-slim-bullseye
-
-MAINTAINER Wazo Maintainers <dev@wazo.io>
+FROM python:3.11-slim-bookworm
+LABEL maintainer="Wazo Maintainers <dev@wazo.io>"
 
 ADD . /usr/src/wazo-asterisk-cli
 WORKDIR /usr/src/wazo-asterisk-cli
